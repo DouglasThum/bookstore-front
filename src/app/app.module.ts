@@ -14,6 +14,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './components/views/home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import { CategoryReadComponent } from './components/views/category/category-read/category-read.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryReadComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { MatCardModule } from '@angular/material/card';
     MatListModule,
     MatIconModule,
     MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
