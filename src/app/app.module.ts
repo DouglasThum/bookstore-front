@@ -19,6 +19,9 @@ import { CategoryReadComponent } from './components/views/category/category-read
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { CategoryCreateComponent } from './components/views/category/category-create/category-create.component';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -43,6 +46,10 @@ import { CategoryCreateComponent } from './components/views/category/category-cr
     MatTableModule,
     HttpClientModule,
     MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
