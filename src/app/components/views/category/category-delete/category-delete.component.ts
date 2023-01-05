@@ -1,7 +1,8 @@
 import { Category } from './../category.model';
 import { CategoryService } from './../category.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-category-delete',
@@ -16,7 +17,7 @@ export class CategoryDeleteComponent implements OnInit {
     description: ''
   }
 
-  constructor(private service: CategoryService, private route: ActivatedRoute) { }
+  constructor(private service: CategoryService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.category.id = this.route.snapshot.paramMap.get('id')!
@@ -28,6 +29,19 @@ export class CategoryDeleteComponent implements OnInit {
       this.category = response
       console.log(this.category)
     })
+  }
+
+  delete(): void {
+    this.service.delete(this.category.id!).subscribe((response) => {
+      this.router.navigate(['categories'])
+      this.service.message('Categoria deletada com sucesso!')
+    }, err => {
+      this.service.message(err.error.error)
+    })
+  }
+
+  cancel(): void {
+    this.router.navigate(['categories'])
   }
 
 }
