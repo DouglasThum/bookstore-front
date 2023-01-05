@@ -39,7 +39,7 @@ export class CategoryUpdateComponent implements OnInit {
       this.router.navigate(['categories'])
       this.service.message("Categoria atualizada com sucesso!");
     }, err => {
-      console.log(err)
+      this.service.message("Favor validar se todos os campos estão preenchidos corretamente")
     })
   }
 
